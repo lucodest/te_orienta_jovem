@@ -22,7 +22,9 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h1>Te Orienta Jovem</h1><br>
+				<div class="d-flex justify-content-center">
+					<img src="Logotipo.png" alt=""><br>
+				</div><br>
 				<h1></h1>
 				<h3>Cadastre-se:</h3>
 				<div class="d-flex justify-content-end social_icon">
@@ -37,7 +39,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" name="user" placeholder="Nome de Usuario">
+						<input type="text" class="form-control" name="user" placeholder="Nome de Usuario" maxlength="50" required>
 						
 					</div>
 					
@@ -45,21 +47,31 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-phone"></i></span>
 						</div>
-						<input type="number" class="form-control" name="tel" placeholder="Telefone">
+						<input type="number" class="form-control" name="tel" placeholder="Telefone" max="9999999999" required>
 					</div>
                     
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</div>
-						<input type="email" class="form-control" name="email" placeholder="Email">
+						<input type="email" class="form-control" name="email" placeholder="Email" maxlength="50" required>
 					</div>
 
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" name="pass" placeholder="Senha">
+						<input type="password" class="form-control" name="pass" placeholder="Senha" maxlength="40" required>
+					</div>
+
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<select id="classe">
+							<option>Professor</option>
+							<option>Aluno</option>
+						  </select>
 					</div>
 
 					

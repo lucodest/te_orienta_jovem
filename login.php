@@ -38,6 +38,7 @@ if(isset($_POST['user']) && isset($_POST['pass'])){
     $row = mysqli_fetch_row($res);
 
     if($row[2] === $_POST['pass']){
+		header('Location: index3.html');
         echo "<h2>Login feito com sucesso!</h2>";
         //deu bom
     }else{

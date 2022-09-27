@@ -16,11 +16,11 @@ align-content: center;
 }
 
 .card{
-height: 400px;
+height: 470px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
-background-color: rgba(255, 255, 255, 0.5) !important;
+width: 470px;
+background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .social_icon span{
@@ -30,13 +30,13 @@ color: #f81c4c;
 }
 
 .social_icon span:hover{
-color: rgb(4, 0, 253);
+color: rgb(0, 173, 253);
 cursor: pointer;
 }
 
-.card-header h1{
-    color: rgb(255, 255, 255);
-    background-color: black;
+.card-header img{
+    justify-content: center;
+    width: 450px;
     }
 
 .card-header h3{
@@ -82,7 +82,7 @@ width: 100px;
 
 .login_btn:hover{
 color: black;
-background-color: rgb(4, 0, 253);
+background-color: rgb(0, 173, 253);
 }
 
 .links{
@@ -91,4 +91,10 @@ color: white;
 
 .links a{
 margin-left: 4px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -9,3 +9,5 @@ telefone char(11) not null,
 email varchar(100) not null,
 primary key(id)
 );
+
+select * from Usuario;
