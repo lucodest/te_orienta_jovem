@@ -15,14 +15,14 @@ if(isset($_POST['user']) && isset($_POST['pass'])){
 	
 	if(empty($_POST['user']) || empty($_POST['pass'])){
 		mysqli_close($db);
-		header('Location: index.html');
+		header('Location: login.html');
 		die('<h2>Erro do cliente: Campos vazios!</h2>');
 	}
 	
 	//segurançaaaa
 	if(str_contains($_POST['user'], "'") || str_contains($_POST['pass'], "'")){
 		mysqli_close($db);
-		header('Location: index.html');
+		header('Location: login.html');
 		die('<h2>Erro do cliente!</h2>');
 	}
 	
@@ -38,7 +38,7 @@ if(isset($_POST['user']) && isset($_POST['pass'])){
     $row = mysqli_fetch_row($res);
 
     if($row[2] === $_POST['pass']){
-		header('Location: index3.html');
+		header('Location: home.html');
         echo "<h2>Login feito com sucesso!</h2>";
         //deu bom
     }else{
