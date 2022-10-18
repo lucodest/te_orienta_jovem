@@ -88,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         </div>
-                        <input type="number" class="form-control" name="tel" placeholder="Telefone" max="9999999999" required>
+                        <input type="number" class="form-control" name="tel" placeholder="Telefone" max="10" required>
                     </div>
 
                     <div class="input-group form-group">
