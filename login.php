@@ -71,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-center">
-                    <img src="media/Logotipo.png" alt=""><br>
+                    <img src="img/Logotipo.png" alt=""><br>
                 </div><br>
                 <h1></h1>
                 <h3>Login:</h3>
