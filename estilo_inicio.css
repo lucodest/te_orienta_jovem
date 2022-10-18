@@ -55,3 +55,43 @@
     button:hover{
         cursor: pointer;
     }
+.navigation__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .navigation__list--inline {
+        display: flex;
+        gap: 1.5em;
+      }
+      
+      .navigation__link {
+        color: inherit;
+        display: block;
+        padding-inline: 1em;
+        text-decoration: none;
+      }
+      
+      .navigation__link--is-active {
+        background-color: #000;
+        border-radius: 999em;
+        color: #fff;
+      }
+
+      .grid {
+        inline-size: 90%;
+        margin-inline: auto;
+        max-inline-size: 48em;
+      }
+      
+      /* helpers/sticky.css */
+      
+      .sticky {
+        position: sticky;
+        will-change: transform;
+      }
+      
+      .sticky--top {
+        top: 0;
+      }
