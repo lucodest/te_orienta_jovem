@@ -12,3 +12,7 @@ senha char(25) not null,
 valor_hora double(9,2) not null,
 foto varchar(150)
 );
+
+select * from professor;
+
+drop table professor;

@@ -52,7 +52,7 @@ jQuery(function() {
                             </div>
                             <div class="mb-3">
                                 <label>CPF</label>
-                                <input type="number" name="cpf"class="form-control" maxlength="11" require>
+                                <input type="number" name="cpf"class="form-control" data-mask="000.000.000.00" maxlength="11" require>
                             </div>
                             <div class="mb-3">
                                 <label>Formação</label>
@@ -69,13 +69,13 @@ jQuery(function() {
                             <div class="mb-3 jet-form__field text-field">
                             <label>Valor p/Hora</label>
                               <label for="dinheiro">R$</label>
-                              <input type="number" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" />
+                              <input type="number" id="valor" name="valor" class="dinheiro form-control" style="display:inline-block" />
                             </div>
                                 <label>Foto</label>
                                 <input type="file" name="foto"class="form-control" require>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="inserir_professor" class="btn btn-primary">Inserir</button>
+                                <button type="submit" name="inserir_professor" class="btn btn-primary">Inserir Professor</button>
                             </div>
                         </form>
                     </div>

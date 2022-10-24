@@ -61,7 +61,7 @@ if (isset($_POST['inserir_professor']))
     $email = mysqli_real_escape_string($conexao, $_POST['email']);
     $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
     $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-    $valor = mysqli_real_escape_string($conexao, $_POST['dinheiro']);
+    $valor = mysqli_real_escape_string($conexao, $_POST['valor']);
     $img = mysqli_real_escape_string($conexao, $_POST['foto']);
 
     $sql = "INSERT INTO professor VALUES (null, '$nome','$cpf','$formacao','$email','$telefone','$senha','$valor','$img')";

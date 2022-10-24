@@ -8,6 +8,6 @@
         echo 'Email: '.$card["email"].'<br>';
         echo 'Telefone: '.$card["telefone"].'<br>';
         echo 'Senha: '.$card["senha"].'<br>';
-        echo 'Valor p/Hora: $'.$card["dinheiro"].'<br> <br> <br>';
+        echo 'Valor p/Hora: $'.$card["valor"].'<br> <br> <br>';
     }
 ?>

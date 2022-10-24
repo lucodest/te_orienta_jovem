@@ -68,7 +68,7 @@ require 'ConexaoBD.php';
                                     <div class="mb-3">
                                         <label>Valor</label>
                                         <p class="form-control">
-                                            <?= $professor['dinheiro']; ?>
+                                            <?= $professor['valor']; ?>
                                         </p>
                                     </div>
                                     <div class="mb-3">

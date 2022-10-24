@@ -14,6 +14,7 @@ require 'ConexaoBD.php';
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="estilo_professores.css">
 
         <title>Editar</title>
     </head>
@@ -28,7 +29,7 @@ require 'ConexaoBD.php';
                         <div class="card-body">
 
                             <?php
-                            if (isset($_GET['id']))
+                            if (isset($_GET['cod_professor']))
                             {
                                 $professor_id = mysqli_real_escape_string($conexao, $_GET['cod_professor']);
                                 $sql = "SELECT * FROM professor WHERE cod_professor='$professor_id'";
@@ -67,7 +68,7 @@ require 'ConexaoBD.php';
                                         </div>
                                         <div class="mb-3">
                                             <label>Valor p/Hora</label>
-                                             <input type="number" name="dinheiro" value="<?= $professor['dinheiro']; ?>" class="dinheiro form-control">
+                                             <input type="number" name="dinheiro" value="<?= $professor['valor']; ?>" class="dinheiro form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label>Foto</label>

@@ -32,10 +32,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Cards</a>
+                        <a class="nav-link" href="index.php">Registros</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="cardListView.php"> New Card <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="cardListView.php"> Novo Registro <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -85,10 +85,10 @@
                                         <td><?= $professor['formacao']; ?></td>
                                         <td><?= $professor['email']; ?></td>
                                         <td><?= $professor['telefone']; ?></td>
-                                        <td><?= $professor['dinheiro']; ?></td>
+                                        <td><?= $professor['valor']; ?></td>
                                         <td><img src="<?= 'img/'.$professor['foto']; ?>" width="60px"></td>
-                                        <td><a href="visualizarArma.php?id=<?= $professor['cod_professor']; ?>" class="btn btn-info btn-sm">Visualizar</a>
-                                            <a href="editarArma.php?id=<?= $professor['cod_professor']; ?>" class="btn btn-success btn-sm">Editar</a>
+                                        <td><a href="visualizarProfessor.php?id=<?= $professor['cod_professor']; ?>" class="btn btn-info btn-sm">Visualizar</a>
+                                            <a href="editarProfessor.php?id=<?= $professor['cod_professor']; ?>" class="btn btn-success btn-sm">Editar</a>
                                             <form action="crudProfessor.php" method="POST" class="d-inline">
                                                 <button type="submit" name="deletar_professor" value="<?= $professor['cod_professor']; ?>" class="btn btn-danger btn-sm">Deletar</button>
                                             </form>
