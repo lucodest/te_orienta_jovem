@@ -1,13 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Numans');
+.col{
+    margin: 30px;
+    padding: 10px;
+    aspect-ratio: 1;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+    color: #e0e0e0;
+}
 
-.card{
-    height: 530px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 490px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    }
+#logo{
+    width: 12vw;
+    position: absolute;
+    left: 2vw;
+    top: 4vh;
+}
 
+<<<<<<< Updated upstream
     *{padding: 0; margin: 0; box-sizing: border-box;}
     body{height: 900px;}
     header {
@@ -95,3 +104,33 @@
       .sticky--top {
         top: 0;
       }
+=======
+.col:hover{
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(10px);
+    width: 60vw;
+}
+
+h1{
+    font-size: 6vw;
+}
+
+h2{
+    font-size: 30px;
+}
+
+body{
+    background-size: 100% auto;
+    background-image: url("img/background.png");
+    color: #e0e0e0;
+    user-select: none;
+}
+
+div img{
+    height: 180px;
+}
+>>>>>>> Stashed changes
