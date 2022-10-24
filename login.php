@@ -114,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                  <a href="cadastro.php">Professor   </a><a>  ou </a><a href="cadastro.php">Aluno</a>
+                  <a href="cadastro_prof.php">Professor   </a><a>  ou </a><a href="cadastro.php">Aluno</a>
                   
                 </div>
 
