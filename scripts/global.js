@@ -1,13 +1,14 @@
 //Codigo do Fundo fluido
 const bgimg = document.createElement('img');
-bgimg.src = 'media/background.png';
+bgimg.src = 'img/background.png';
 bgimg.style.position = 'fixed';
 bgimg.style.zIndex = '-1';
 bgimg.style.top = '0';
 bgimg.style.left = '0';
+bgimg.ratio = bgimg.width / bgimg.height;
 document.body.appendChild(bgimg);
 window.onresize = function () {
-    if(window.innerWidth > window.innerHeight * (16/9)){
+    if(window.innerWidth > window.innerHeight * bgimg.ratio){
         bgimg.style.height = 'auto';
         bgimg.style.width = '100vw';
     }else{
@@ -15,4 +16,6 @@ window.onresize = function () {
         bgimg.style.height = '100vh';
     }
 }
-onresize();
+onresize(undefined);
+
+//
