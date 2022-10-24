@@ -16,95 +16,6 @@
     top: 4vh;
 }
 
-<<<<<<< Updated upstream
-    *{padding: 0; margin: 0; box-sizing: border-box;}
-    body{height: 900px;}
-    header {
-        background: url('../media/background.jpg');
-        text-align: center;
-        width: 100%;
-        height: auto;
-        background-size: cover;
-        background-attachment: fixed;
-        position: relative;
-        overflow: hidden;
-        border-radius: 0 0 85% 85% / 30%;
-    }
-    header .overlay{
-        width: 100%;
-        height: 100%;
-        padding: 50px;
-        color: #FFF;
-        text-shadow: 1px 1px 1px #333;
-      background-image: linear-gradient( 135deg, #00d9ff41 10%, #fd08086b 100%);
-        
-    }
-    
-    h1 {
-        font-family: 'Dancing Script', cursive;
-        font-size: 80px;
-        margin-bottom: 30px;
-    }
-    
-    h3, p {
-        font-family: 'Open Sans', sans-serif;
-        margin-bottom: 30px;
-    }
-    
-    button {
-        border: none;
-        outline: none;
-        padding: 10px 20px;
-        border-radius: 50px;
-        color: #333;
-        background: #fff;
-        margin-bottom: 50px;
-        box-shadow: 0 3px 20px 0 #0000003b;
-    }
-    button:hover{
-        cursor: pointer;
-    }
-.navigation__list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      
-      .navigation__list--inline {
-        display: flex;
-        gap: 1.5em;
-      }
-      
-      .navigation__link {
-        color: inherit;
-        display: block;
-        padding-inline: 1em;
-        text-decoration: none;
-      }
-      
-      .navigation__link--is-active {
-        background-color: #000;
-        border-radius: 999em;
-        color: #fff;
-      }
-
-      .grid {
-        inline-size: 90%;
-        margin-inline: auto;
-        max-inline-size: 48em;
-      }
-      
-      /* helpers/sticky.css */
-      
-      .sticky {
-        position: sticky;
-        will-change: transform;
-      }
-      
-      .sticky--top {
-        top: 0;
-      }
-=======
 .col:hover{
     background-color: rgba(255, 255, 255, 0.35);
 }
@@ -133,4 +44,3 @@ body{
 div img{
     height: 180px;
 }
->>>>>>> Stashed changes
