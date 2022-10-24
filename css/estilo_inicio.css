@@ -35,8 +35,6 @@ h2{
 }
 
 body{
-    background-size: 100% auto;
-    background-image: url("../img/background.png");
     color: #e0e0e0;
     user-select: none;
 }

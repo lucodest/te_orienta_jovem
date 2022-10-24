@@ -87,10 +87,3 @@ color: white;
 margin-left: 4px;
 }
 
-#bg{
-    width: 100vw;
-    position: fixed;
-    z-index: -1;
-}
-
-

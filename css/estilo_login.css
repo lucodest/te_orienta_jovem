@@ -1,12 +1,6 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url(../media/background.png);
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
