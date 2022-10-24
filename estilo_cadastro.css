@@ -16,11 +16,11 @@ align-content: center;
 }
 
 .card{
-height: 530px;
+height: 640px;
 margin-top: auto;
 margin-bottom: auto;
-width: 490px;
-background-color: rgba(0, 0, 0, 0.5) !important;
+width: 470px;
+background-color: rgba(255, 255, 255, 0.616) !important;
 }
 
 .social_icon span{
@@ -40,7 +40,7 @@ cursor: pointer;
     }
 
 .card-header h3{
-color: white;
+color: rgb(0, 0, 0);
 }
 
 .social_icon{
@@ -93,8 +93,3 @@ color: white;
 margin-left: 4px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
