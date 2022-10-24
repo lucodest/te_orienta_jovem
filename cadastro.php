@@ -60,6 +60,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" type="text/css" href="estilo_cadastro.css">
 </head>
 <body>
+<img src="img/background.png" id="bg">
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
@@ -69,11 +70,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div><br>
                 <h1></h1>
                 <h3>Cadastre-se:</h3>
-                <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
-                    <span><i class="fab fa-whatsapp-square"></i></span>
-                    <span><i class="fab fa-twitter-square"></i></span>
-                </div>
+                
             </div>
             <div class="card-body">
                 <form method="post" action="cadastro.php">
@@ -106,16 +103,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="password" class="form-control" name="pass" placeholder="Senha" maxlength="40" required>
                     </div>
 
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <select id="classe">
-                            <option>Professor</option>
-                            <option>Aluno</option>
-                        </select>
-                    </div>
-
+                    
 
                     <div class="form-group">
                         <input type="submit" value="Criar" class="btn float-right login_btn">
@@ -125,7 +113,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                    Já tem uma conta?<a href="login.php">Entrar</a>
+                    <a>Já tem uma conta? Entre</a>
+                </div>
+                <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                  <a href="cadastro_prof.html">Professor   </a><a>  ou </a><a href="cadastro.php">Aluno</a>
+                  
                 </div>
             </div>
         </div>

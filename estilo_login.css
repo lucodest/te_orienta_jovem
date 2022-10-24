@@ -1,11 +1,9 @@
 
 
-
-
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('media/s.jpg');
+background-image: url(media/background.png);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -22,7 +20,7 @@ height: 600px;
 margin-top: auto;
 margin-bottom: auto;
 width: 470px;
-background-color: rgba(255, 255, 255, 0.596) !important;
+background-color: rgba(56, 48, 48, 0.596) !important;
 }
 
 .social_icon span{
@@ -42,7 +40,7 @@ cursor: pointer;
     }
 
 .card-header h3{
-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 }
 
 .social_icon{
@@ -94,3 +92,4 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
