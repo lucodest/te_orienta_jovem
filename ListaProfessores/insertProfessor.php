@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<? php session_start(); ?>
 
 <!doctype html>
 <html lang="pt-BR">
@@ -11,7 +11,25 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <title>Criar Arma</title>
+        <link rel="stylesheet" type="text/css" href="estilo_professores.css">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+
+<script>
+jQuery(function() {
+    
+    jQuery("#valor").maskMoney({
+	prefix:'R$ ', 
+	thousands:'.', 
+	decimal:','
+})
+
+});
+</script>
+    
+        
+        <title>Inserir Professor</title>
     </head>
     <body>
 
@@ -20,32 +38,44 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Adicionar Arma <a href="cardListView.php" class="btn btn-danger float-end">VOLTAR</a> </h4>
+                        <h4>Inserir Professor <a href="cardListView.php" class="btn btn-danger float-end">VOLTAR</a> </h4>
                     </div>
                     <div class="card-body">
-                        <form action="crudArmas.php" method="POST">
-                            <div class="mb-3">
+                        <form action="crudProfessor.php" method="POST">
+                        <div class="mb-3">        
+                        <label>ID</label>
+                                <input type="number" name="id"class="form-control" require>
+                            </div>    
+                        <div class="mb-3">
                                 <label>Nome</label>
-                                <input type="text" name="nome"class="form-control" require>
+                                <input type="text" name="nome"class="form-control" maxlength="50" require>
                             </div>
                             <div class="mb-3">
-                                <label>Balas</label>
-                                <input type="number" name="balas"class="form-control" require>
+                                <label>CPF</label>
+                                <input type="number" name="cpf"class="form-control" maxlength="11" require>
                             </div>
                             <div class="mb-3">
-                                <label>Dano</label>
-                                <input type="number" name="dano"class="form-control" require>
+                                <label>Formação</label>
+                                <input type="text" name="formacao" class="form-control" max="100" require>
                             </div>
                             <div class="mb-3">
-                                <label>Preco</label>
-                                <input type="number" name="preco"class="form-control" require>
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" maxlength="50" require>
                             </div>
                             <div class="mb-3">
-                                <label>Imagem</label>
-                                <input type="file" name="img"class="form-control" require>
+                                <label>Telefone</label>
+                                <input type="text" name="telefone" class="telefone form-control" data-mask="(00) 0 0000-0000" placeholder="(00) 0 0000-0000" style="width: 200px;" autocomplete="off" maxlength="16">
+                            </div>
+                            <div class="mb-3 jet-form__field text-field">
+                            <label>Valor p/Hora</label>
+                              <label for="dinheiro">R$</label>
+                              <input type="number" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" />
+                            </div>
+                                <label>Foto</label>
+                                <input type="file" name="foto"class="form-control" require>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="inserir_arma" class="btn btn-primary">Inserir Arma</button>
+                                <button type="submit" name="inserir_professor" class="btn btn-primary">Inserir Professor</button>
                             </div>
                         </form>
                     </div>

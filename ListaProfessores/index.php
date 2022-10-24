@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php"> Cards <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php"> Registros <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cardListView.php">New Card</a>
+                        <a class="nav-link" href="cardListView.php">Novo Registro</a>
                     </li>
                 </ul>
             </div>
@@ -45,21 +45,21 @@
         </div>
         <!-- Componente 3 LINHAS E COLUNAS -->
         <?php 
-        $sql = "SELECT * FROM arma";
+        $sql = "SELECT * FROM professor";
         $execComando = mysqli_query($conexao, $sql);
         if (mysqli_num_rows($execComando) > 0)
         {
-            foreach ($execComando as $arma)
+            foreach ($execComando as $professor)
             {?>
                 <div class="card" style="width: 18rem;">
-                    <?php exibirCard($arma) ?>
+                    <?php exibirCard($professor) ?>
                 </div>
               <?php
             }
         } 
         else 
         {
-            echo "<h5> Nenhuma arma cadastrada </h5>";
+            echo "<h5> Nenhuma professor cadastrado </h5>";
         }
         ?>
     </div>

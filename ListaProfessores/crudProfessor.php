@@ -2,11 +2,11 @@
 session_start();
 require 'ConexaoBD.php';
 
-if (isset($_POST['deletar_arma']))
+if (isset($_POST['deletar_professor']))
 {
-    $arma_id = mysqli_real_escape_string($conexao,$_POST['deletar_arma']);
+    $professor_id = mysqli_real_escape_string($conexao,$_POST['deletar_professor']);
 
-    $sql = "DELETE FROM arma WHERE id='$arma_id' ";
+    $sql = "DELETE FROM professor WHERE cod_professor='$professor_id' ";
     $execComando = mysqli_query($conexao, $sql);
 
     if ($execComando)
@@ -23,16 +23,19 @@ if (isset($_POST['deletar_arma']))
     }
 }
 
-if (isset($_POST['editar_arma']))
+if (isset($_POST['editar_professor']))
 {
-    $arma_id = mysqli_real_escape_string($conexao,$_POST['arma_id']);
+    $professor_id = mysqli_real_escape_string($conexao,$_POST['cod_professor']);
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-    $balas = mysqli_real_escape_string($conexao, $_POST['balas']);
-    $dano = mysqli_real_escape_string($conexao, $_POST['dano']);
-    $preco = mysqli_real_escape_string($conexao, $_POST['preco']);
-    $img = mysqli_real_escape_string($conexao, $_POST['img']);
+    $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+    $formacao = mysqli_real_escape_string($conexao, $_POST['formacao']);
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
+    $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+    $valor = mysqli_real_escape_string($conexao, $_POST['dinheiro']);
+    $img = mysqli_real_escape_string($conexao, $_POST['foto']);
 
-    $sql = "UPDATE arma SET nome='$nome', balas='$balas', dano='$dano', preco='$preco', img = '$img' WHERE id='$arma_id'";
+    $sql = "UPDATE professor SET nome='$nome', cpf='$cpf', formacao='$formacao', email='$email', telefone='$telefone', senha='$senha', dinheiro='$valor', foto = '$img' WHERE cod_professor='$professor_id'";
     $execComando = mysqli_query($conexao, $sql);
 
     if ($execComando)
@@ -49,19 +52,23 @@ if (isset($_POST['editar_arma']))
     }
 }
 
-if (isset($_POST['inserir_arma']))
+if (isset($_POST['inserir_professor']))
 {
+    $professor_id = mysqli_real_escape_string($conexao,$_POST['cod_professor']);
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-    $balas = mysqli_real_escape_string($conexao, $_POST['balas']);
-    $dano = mysqli_real_escape_string($conexao, $_POST['dano']);
-    $preco = mysqli_real_escape_string($conexao, $_POST['preco']);
-    $img = mysqli_real_escape_string($conexao, $_POST['img']);
+    $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+    $formacao = mysqli_real_escape_string($conexao, $_POST['formacao']);
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
+    $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+    $valor = mysqli_real_escape_string($conexao, $_POST['dinheiro']);
+    $img = mysqli_real_escape_string($conexao, $_POST['foto']);
 
-    $sql = "INSERT INTO arma VALUES (null, '$nome','$balas','$dano','$preco','$img')";
+    $sql = "INSERT INTO professor VALUES (null, '$nome','$cpf','$formacao','$email','$telefone','$senha','$valor','$img')";
     $execComando = mysqli_query($conexao, $sql);
     if ($execComando)
     {
-        $_SESSION['message'] = "Professor cadastrada com sucesso!";
+        $_SESSION['message'] = "Professor(a) cadastrado com sucesso!";
         header("Location: cardListView.php");
         exit(0);
     }

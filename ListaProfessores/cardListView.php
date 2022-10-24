@@ -52,7 +52,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Informações
-                            <div class="float-end"> <a href="insertArma.php" class="btn btn-primary">Adicionar usuário</a> </div>
+                            <div class="float-end"> <a href="insertProfessor.php" class="btn btn-primary">Adicionar Professor</a> </div>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -61,33 +61,36 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-                                    <th>Balas</th>
-                                    <th>Dano</th>
-                                    <th>Preco</th>
-                                    <th>Imagem</th>
-                                    <th>Acao</th>
+                                    <th>CPF</th>
+                                    <th>Formação</th>
+                                    <th>Email</th>
+                                    <th>Telefone</th>
+                                    <th>Valor p/Hora</th>
+                                    <th>Foto</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php 
 
-                            $sql = "SELECT * FROM arma";
+                            $sql = "SELECT * FROM professor";
                             $execComando = mysqli_query($conexao, $sql);
                             if (mysqli_num_rows($execComando) > 0)
                             {
-                                foreach ($execComando as $arma)
+                                foreach ($execComando as $professor)
                                 {?>
                                     <tr>
-                                        <td><?= $arma['id']; ?></td>
-                                        <td><?= $arma['nome']; ?></td>
-                                        <td><?= $arma['balas']; ?></td>
-                                        <td><?= $arma['dano']; ?></td>
-                                        <td><?= $arma['preco']; ?></td>
-                                        <td><img src="<?= 'img/'.$arma['img']; ?>" width="60px"></td>
-                                        <td><a href="visualizarArma.php?id=<?= $arma['id']; ?>" class="btn btn-info btn-sm">Visualizar</a>
-                                            <a href="editarArma.php?id=<?= $arma['id']; ?>" class="btn btn-success btn-sm">Editar</a>
-                                            <form action="crudArmas.php" method="POST" class="d-inline">
-                                                <button type="submit" name="deletar_arma" value="<?= $arma['id']; ?>" class="btn btn-danger btn-sm">Deletar</button>
+                                        <td><?= $professor['cod_professor']; ?></td>
+                                        <td><?= $professor['nome']; ?></td>
+                                        <td><?= $professor['cpf']; ?></td>
+                                        <td><?= $professor['formacao']; ?></td>
+                                        <td><?= $professor['email']; ?></td>
+                                        <td><?= $professor['telefone']; ?></td>
+                                        <td><?= $professor['dinheiro']; ?></td>
+                                        <td><img src="<?= 'img/'.$professor['foto']; ?>" width="60px"></td>
+                                        <td><a href="visualizarArma.php?id=<?= $professor['cod_professor']; ?>" class="btn btn-info btn-sm">Visualizar</a>
+                                            <a href="editarArma.php?id=<?= $professor['cod_professor']; ?>" class="btn btn-success btn-sm">Editar</a>
+                                            <form action="crudProfessor.php" method="POST" class="d-inline">
+                                                <button type="submit" name="deletar_professor" value="<?= $professor['cod_professor']; ?>" class="btn btn-danger btn-sm">Deletar</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -13,7 +13,9 @@ require 'ConexaoBD.php';
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <title>Student Edit</title>
+        <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+
+        <title>Editar</title>
     </head>
     <body>
         <div class="container mt-5">
@@ -28,39 +30,51 @@ require 'ConexaoBD.php';
                             <?php
                             if (isset($_GET['id']))
                             {
-                                $arma_id = mysqli_real_escape_string($conexao, $_GET['id']);
-                                $sql = "SELECT * FROM arma WHERE id='$arma_id'";
+                                $professor_id = mysqli_real_escape_string($conexao, $_GET['cod_professor']);
+                                $sql = "SELECT * FROM professor WHERE cod_professor='$professor_id'";
                                 $query_run = mysqli_query($conexao, $sql);
 
                                 if (mysqli_num_rows($query_run) > 0)
                                 {
-                                    $arma = mysqli_fetch_array($query_run);
+                                    $professor = mysqli_fetch_array($query_run);
                                 ?>
 
-                                    <form action="crudArmas.php" method="POST">
-                                        <input type="hidden" name="arma_id" value="<?= $arma['id']; ?>">
+                                    <form action="crudProfessor.php" method="POST">
+                                        <input type="hidden" name="professor_id" value="<?= $professor['cod_professor']; ?>">
                                         <div class="mb-3">
                                             <label>Nome</label>
-                                            <input type="text" name="nome" value="<?= $arma['nome']; ?>" class="form-control">
+                                            <input type="text" name="nome" value="<?= $professor['nome']; ?>" class="form-control">
                                         </div>
                                         <div class="mb-3">
-                                            <label>Balas</label>
-                                             <input type="number" name="balas" value="<?= $arma['balas']; ?>" class="form-control">
+                                            <label>CPF</label>
+                                             <input type="number" name="cpf" value="<?= $professor['cpf']; ?>" class="form-control">
                                         </div>
                                         <div class="mb-3">
-                                            <label>Dano</label>
-                                             <input type="number" name="dano" value="<?= $arma['dano']; ?>" class="form-control">
+                                            <label>Formação</label>
+                                             <input type="text" name="formacao" value="<?= $professor['formacao']; ?>" class="form-control">
                                         </div>
                                         <div class="mb-3">
-                                            <label>Preco</label>
-                                             <input type="number" name="preco" value="<?= $arma['preco']; ?>" class="form-control">
+                                            <label>Email</label>
+                                             <input type="email" name="email" value="<?= $professor['email']; ?>" class="form-control">
                                         </div>
                                         <div class="mb-3">
-                                            <label>Imagem</label>
-                                            <input type="file" name="img" value="<?= $arma['img']; ?>" class="form-control">
+                                            <label>Telefone</label>
+                                             <input type="tel" name="telefone" value="<?= $professor['telefone']; ?>" class="telefone form-control" data-mask="(00) 0 0000-0000" placeholder="(00) 0 0000-0000">
                                         </div>
                                         <div class="mb-3">
-                                            <button type="submit" name="editar_arma" class="btn btn-primary">Atualizar Arma </button>
+                                            <label>Senha</label>
+                                             <input type="pass" name="email" value="<?= $professor['senha']; ?>" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Valor p/Hora</label>
+                                             <input type="number" name="dinheiro" value="<?= $professor['dinheiro']; ?>" class="dinheiro form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Foto</label>
+                                            <input type="file" name="img" value="<?= $professor['foto']; ?>" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <button type="submit" name="editar_professor" class="btn btn-primary">Atualizar Informações</button>
                                          </div>
                                     </form>
                                 <?php

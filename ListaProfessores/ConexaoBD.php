@@ -1,6 +1,6 @@
 <?php
 
-$conexao = mysqli_connect("localhost","root","","pCards");
+$conexao = mysqli_connect("localhost","root","","cadastro_professores");
 
 if(!$conexao)
 {

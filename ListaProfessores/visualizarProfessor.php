@@ -11,7 +11,9 @@ require 'ConexaoBD.php';
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <title>Detalhes da Arma</title>
+        <link rel="stylesheet" type="text/css" href="estilo_professores.css">
+
+        <title>Detalhes</title>
     </head>
     <body>
         <div class="container mt-5">
@@ -19,14 +21,14 @@ require 'ConexaoBD.php';
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Dados da Arma <a href="cardListView.php" class="btn btn-danger float-end">VOLTAR</a></h4>
+                            <h4>Dados do Professor <a href="cardListView.php" class="btn btn-danger float-end">VOLTAR</a></h4>
                         </div>
                         <div class="card-body">
                             <?php
-                            if (isset($_GET['id']))
+                            if (isset($_GET['cod_professor']))
                             {
-                                $arma_id = mysqli_real_escape_string($conexao, $_GET['id']);
-                                $sql = "SELECT * FROM arma WHERE id='$arma_id' ";
+                                $professor_id = mysqli_real_escape_string($conexao, $_GET['cod_professor']);
+                                $sql = "SELECT * FROM professor WHERE cod_professor='$professor_id' ";
                                 $query_run = mysqli_query($conexao, $sql);
 
                                 if (mysqli_num_rows($query_run) > 0)
@@ -36,31 +38,43 @@ require 'ConexaoBD.php';
                                     <div class="mb-3">
                                         <label>Nome</label>
                                         <p class="form-control">
-                                            <?= $arma['nome']; ?>
+                                            <?= $professor['nome']; ?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Balas</label>
+                                        <label>CPF</label>
                                         <p class="form-control">
-                                            <?= $arma['balas']; ?>
+                                            <?= $professor['cpf']; ?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Dano</label>
+                                        <label>Formação</label>
                                         <p class="form-control">
-                                            <?= $arma['dano']; ?>
+                                            <?= $professor['formacao']; ?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Preco</label>
+                                        <label>Email</label>
                                         <p class="form-control">
-                                            <?= $arma['preco']; ?>
+                                            <?= $professor['email']; ?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Imagem</label>
+                                        <label>Telefone</label>
                                         <p class="form-control">
-                                            <?= $arma['img']; ?>
+                                            <?= $professor['telefone']; ?>
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Valor</label>
+                                        <p class="form-control">
+                                            <?= $professor['dinheiro']; ?>
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Foto</label>
+                                        <p class="form-control">
+                                            <?= $professor['img']; ?>
                                         </p>
                                     </div>
                             <?php
