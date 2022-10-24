@@ -75,7 +75,7 @@ jQuery(function() {
                                 <input type="file" name="foto"class="form-control" require>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="inserir_professor" class="btn btn-primary">Inserir Professor</button>
+                                <button type="submit" name="inserir_professor" class="btn btn-primary">Inserir</button>
                             </div>
                         </form>
                     </div>
