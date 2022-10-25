@@ -8,27 +8,34 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if (isset($_POST['user']) && isset($_POST['pass'])) {
+    if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['tipo'])) {
         $db = mysqli_connect("localhost", "root", "");
         if (!$db) {
             die('<h2>Erro no servidor!</h2>');
         }
         mysqli_select_db($db, "te_orienta_joven");
 
-        if (empty($_POST['user']) || empty($_POST['pass'])) {
+        if (empty($_POST['user']) || empty($_POST['pass']) || empty($_POST['tipo'])) {
             mysqli_close($db);
             header('Location: login.php');
             die('<h2>Erro do cliente: Campos vazios!</h2>');
         }
 
         //segurançaaaa
-        if (str_contains($_POST['user'], "'") || str_contains($_POST['pass'], "'")) {
+        if (str_contains($_POST['user'], "'") || str_contains($_POST['pass'], "'") || str_contains($_POST['tipo'], "'")) {
             mysqli_close($db);
             header('Location: login.php');
             die('<h2>Erro do cliente!</h2>');
         }
+        if($_POST['tipo'] == 'a')
+            $query = "SELECT * FROM usuario WHERE username = '" . $_POST['user'] . "'";
+        elseif($_POST['tipo'] == 'p')
+            $query = "SELECT * FROM professor WHERE nome = '" . $_POST['user'] . "'";
+        else
+            die('<h2>Erro no tipo.</h2>');
 
-        $res = mysqli_query($db, "SELECT * FROM usuario WHERE username = '" . $_POST['user'] . "'");
+        $res = mysqli_query($db, $query);
+
         if (!$res) {
             die('<h2>Error na querry:' . $db->error . '</h2>');
         }
@@ -94,9 +101,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <input type="password" name="pass" class="form-control" placeholder="Senha" maxlength="40" required>
                     </div>
+
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <select name="tipo">
+                            <option value="a">Aluno</option>
+                            <option value="p">Professor</option>
+                        </select>
+                    </div>
                     
                     <div class="row align-items-center remember">
-                        <input type="checkbox">Lembrar-se de mim
+                        <input type="checkbox" name="lm">Lembrar-se de mim
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Entrar" class="btn float-right login_btn">
