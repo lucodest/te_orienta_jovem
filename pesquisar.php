@@ -77,7 +77,7 @@ if (!function_exists('str_contains')) {
                                 $card['formac']; ?></td>
                             <td><?=
                                 $card['email']; ?></td>
-                            <td><?=
+                            <td>R$ <?=
                                 $card['valor']; ?></td>
                         </tr>
                         <?php

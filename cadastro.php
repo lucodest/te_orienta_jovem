@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
             </div>
             <div class="card-body">
-                <form method="post" action="cadastro.php">
+                <form method="post" action="cadastro.php" onsubmit="return confSenha()">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -85,7 +85,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         </div>
-                        <input type="text" class="telefone form-control" name="telefone" id="tel" placeholder="Telefone" required>
+                        <input type="text" class="telefone form-control" name="tel" id="tel" placeholder="Telefone" required>
                     </div>
 
                     <div class="input-group form-group">
@@ -99,14 +99,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" name="pass" placeholder="Senha" maxlength="40" required>
+                        <input type="password" id="sen" class="form-control" name="pass" placeholder="Senha" maxlength="40" required>
                     </div>
 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Confirmar senha" maxlength="40" required>
+                        <input type="password" id="sen2" class="form-control" placeholder="Confirmar senha" maxlength="40" required>
                     </div>
 
                     <div class="form-group">

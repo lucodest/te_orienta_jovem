@@ -18,4 +18,9 @@ window.onresize = function () {
 }
 onresize(undefined);
 
-//
+//Confirma senha
+function confSenha() {
+    let conf = $('#sen').val() === $('#sen2').val();
+    if (!conf) alert('Confirmação de senha incorreta!');
+    return conf;
+}

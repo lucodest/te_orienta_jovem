@@ -69,7 +69,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
             </div>
             <div class="card-body">
-                <form method="post" action="cadastro_prof.php">
+                <form method="post" action="cadastro_prof.php" onsubmit="return confSenha()">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -111,14 +111,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" name="pass" placeholder="Senha" maxlength="20" required>
+                        <input type="password" id="sen" class="form-control" name="pass" placeholder="Senha" maxlength="20" required>
                     </div>
 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Confirmar senha" maxlength="40" required>
+                        <input type="password" id="sen2" class="form-control" placeholder="Confirmar senha" maxlength="40" required>
                     </div>
             
 
