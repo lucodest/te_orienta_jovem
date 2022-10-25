@@ -1,3 +1,47 @@
+<?php
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+//polyfill
+    if (!function_exists('str_contains')) {
+        function str_contains($haystack, $needle)
+        {
+            return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+        }
+    }
+
+    if (isset($_POST['user']) && isset($_POST['cpf']) && isset($_POST['formac']) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['pass']) && isset($_POST['val'])) {
+        $db = mysqli_connect("localhost", "root", "");
+        if (!$db) {
+            die('<h2>Erro no servidor!</h2>');
+        }
+
+        if (empty($_POST['user']) || empty($_POST['cpf']) || empty($_POST['formac']) || empty($_POST['email']) || empty($_POST['tel']) || empty($_POST['pass']) || empty($_POST['val'])) {
+            mysqli_close($db);
+            die('<h2>Erro do cliente: Campos vazios!</h2>');
+        }
+
+        //segurançaaaa
+        if (str_contains($_POST['user'], "'") || str_contains($_POST['cpf'], "'") || str_contains($_POST['formac'], "'") || str_contains($_POST['email'], "'") || str_contains($_POST['tel'], "'") || str_contains($_POST['pass'], "'") || str_contains($_POST['val'], "'")) {
+            mysqli_close($db);
+            die('<h2>Erro do cliente!</h2>');
+        }
+
+        mysqli_select_db($db, "te_orienta_joven");
+        $res = mysqli_query($db, "INSERT INTO professor VALUES (NULL, '" . $_POST['user'] . "','" . $_POST['cpf'] . "','" . $_POST['formac'] . "','" . $_POST['email'] . "','" . $_POST['tel'] ."','" . $_POST['pass'] ."','" . $_POST['val'] ."','');");
+        if ($res) {
+            header('Location: pesquisar.php');
+            echo "<h2>Cadastrado com sucesso!</h2>";
+        } else {
+            die('<h2>Error na querry:' . $db->error . '</h2>');
+        }
+
+        mysqli_close($db);
+    } else {
+        die("<h2>Error: Requisição invalida</h2>");
+    }
+}
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -25,7 +69,7 @@
                 
             </div>
             <div class="card-body">
-                <form method="post" action="cadastro.php">
+                <form method="post" action="cadastro_prof.php">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -46,30 +90,28 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="formacao" placeholder="Formação" maxlength="100" required>
+                        <input type="text" class="form-control" name="formac" placeholder="Formação" maxlength="100" required>
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                         <input type="text" class="form-control"  placeholder="Email" />
-                         
-
+                         <input type="text" name="email" class="form-control"  placeholder="Email" />
                     </div>
 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         </div>
-                        <input type="text" id="tel" class="telefone form-control" name="telefone" placeholder="Telefone" required>
+                        <input type="text" id="tel" class="telefone form-control" name="tel" placeholder="Telefone" required>
                     </div>
 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" name="senha" placeholder="Senha" maxlength="20" required>
+                        <input type="password" class="form-control" name="pass" placeholder="Senha" maxlength="20" required>
                     </div>
 
                     <div class="input-group form-group">
@@ -84,7 +126,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="number" class="form-control" name="pass" placeholder="Valor" min="0" max="2000" required>
+                        <input type="number" class="form-control" name="val" placeholder="Valor" min="0" max="2000" required>
                     </div>
 
                     <div class="form-group">
@@ -93,7 +135,6 @@
 
                 </form>
             </div>
-            
             </div>
         </div>
     </div>
