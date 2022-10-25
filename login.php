@@ -1,4 +1,5 @@
 <?php
+
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 //polyfill
     if (!function_exists('str_contains')) {
@@ -27,12 +28,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: login.php');
             die('<h2>Erro do cliente!</h2>');
         }
-        if($_POST['tipo'] == 'a')
+        $numrow = 0;
+        if($_POST['tipo'] == 'a') {
             $query = "SELECT * FROM usuario WHERE username = '" . $_POST['user'] . "'";
-        elseif($_POST['tipo'] == 'p')
-            $query = "SELECT * FROM professor WHERE nome = '" . $_POST['user'] . "'";
-        else
-            die('<h2>Erro no tipo.</h2>');
+            $numrow = 2;
+        }elseif($_POST['tipo'] == 'p'){
+        $query = "SELECT * FROM professor WHERE nome = '" . $_POST['user'] . "'";
+        $numrow = 6;
+    }else die('<h2>Erro no tipo.</h2>');
 
         $res = mysqli_query($db, $query);
 
@@ -46,9 +49,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $row = mysqli_fetch_row($res);
 
-        if ($row[2] === $_POST['pass']) {
+        if ($row[$numrow] === $_POST['pass']) {
             header('Location: home.html');
-            die("<h2>Login feito com sucesso!</h2>");
+            echo "<h2>Login feito com sucesso!</h2>";
             //deu bom
         } else {
             die("<h2>Senha incorreta!</h2>");
