@@ -1,13 +1,6 @@
 <?php
-
+session_start();
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-//polyfill
-    if (!function_exists('str_contains')) {
-        function str_contains($haystack, $needle)
-        {
-            return $needle !== '' && mb_strpos($haystack, $needle) !== false;
-        }
-    }
 
     if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['tipo'])) {
         $db = mysqli_connect("localhost", "root", "");
@@ -22,20 +15,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             die('<h2>Erro do cliente: Campos vazios!</h2>');
         }
 
-        //segurançaaaa
-        if (str_contains($_POST['user'], "'") || str_contains($_POST['pass'], "'") || str_contains($_POST['tipo'], "'")) {
-            mysqli_close($db);
-            header('Location: login.php');
-            die('<h2>Erro do cliente!</h2>');
-        }
-        $numrow = 0;
+        $password = mysqli_real_escape_string($db, $_POST['pass']);
+        $username = mysqli_real_escape_string($db, $_POST['user']);
+
         if($_POST['tipo'] == 'a') {
-            $query = "SELECT * FROM usuario WHERE username = '" . $_POST['user'] . "'";
+            $query = "SELECT * FROM usuario WHERE username = '" . $username . "'";
             $numrow = 2;
+            $utype = true;
         }elseif($_POST['tipo'] == 'p'){
-        $query = "SELECT * FROM professor WHERE nome = '" . $_POST['user'] . "'";
-        $numrow = 6;
-    }else die('<h2>Erro no tipo.</h2>');
+            $query = "SELECT * FROM professor WHERE nome = '" . $username . "'";
+            $numrow = 6;
+            $utype = false;
+        }else die('<h2>Erro no tipo.</h2>');
 
         $res = mysqli_query($db, $query);
 
@@ -49,14 +40,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $row = mysqli_fetch_row($res);
 
-        if ($row[$numrow] === $_POST['pass']) {
-            header('Location: home.html');
+        if ($row[$numrow] === $password) {
+            $_SESSION['uid'] = $row[0];
+            $_SESSION['utype'] = $utype;
+            $_SESSION['uname'] = $username;
+            header('Location: home.php');
             echo "<h2>Login feito com sucesso!</h2>";
             //deu bom
         } else {
             die("<h2>Senha incorreta!</h2>");
         }
-
         mysqli_close($db);
     } else {
         die("<h2>Error: Requisição invalida</h2>");

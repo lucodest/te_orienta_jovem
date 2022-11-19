@@ -9,6 +9,22 @@
     color: #e0e0e0;
 }
 
+#userbox{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top:1vh;
+    left: 1vh;
+    font-size: 2vh;
+}
+
+#userbox a{
+    text-decoration: none;
+    margin-left: 10px;
+    color: #f81c4c;
+}
+
 #logo{
     width: 12vw;
     position: absolute;

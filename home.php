@@ -1,3 +1,16 @@
+<?php
+session_start();
+If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['uname'])){
+    header('Location: index.html');
+    die();
+}
+if(isset($_GET['logoff'])){
+    session_unset();
+    session_destroy();
+    header('Location: index.html');
+    die();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +28,7 @@
 </head>
 <body class="text-center">
 <h1>Te orienta jovem</h1><br>
+<div id="userbox"><span><?php echo $_SESSION['uname']; ?>   </span><a href="home.php?logoff">Sair</a></div>
 <div class="container">
 	<div class="row">
 		<div class="col">
@@ -25,9 +39,9 @@
 			<img src="img/cursos.png">
 			<h2>Cursos</h2>
 		</div>
-		<div class="col"><a href="pesquisar.php">
+		<div class="col" onclick="window.location.pathname = 'te_orienta_jovem/pesquisar.php'"> <!--DEBUG -->
 			<img src="img/aula.png">
-			<h2>Professores</h2></a>
+			<h2>Professores</h2>
 		</div>
 	</div>
 	<div class="row">

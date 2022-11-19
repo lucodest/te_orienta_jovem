@@ -1,12 +1,11 @@
 <?php
-//polyfill
-if (!function_exists('str_contains')) {
-    function str_contains($haystack, $needle)
-    {
-        return $needle !== '' && mb_strpos($haystack, $needle) !== false;
-    }
+session_start();
+If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['uname'])){
+    header('Location: index.html');
+    die();
 }
 ?>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <!-- Required meta tags -->
@@ -27,7 +26,7 @@ if (!function_exists('str_contains')) {
             <div class="card">
                 <div class="card-header">
                     <h3>Pesquisa de professores
-                        <a href="home.html" class="btn btn-danger float-end">VOLTAR</a>
+                        <a href="home.php" class="btn btn-danger float-end">VOLTAR</a>
                     </h3><br>
                     <form method="POST" action="pesquisar.php">
                         <input type="text" name="pesq" placeholder="Nome">
@@ -53,11 +52,7 @@ if (!function_exists('str_contains')) {
                 }
 
                 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pesq']) && !empty($_POST['pesq'])){
-                    if(str_contains($_POST['pesq'], "'")){
-                        mysqli_close($db);
-                        die('<h2>Erro do cliente!</h2>');
-                    }
-                    $query = "SELECT * FROM professor WHERE nome LIKE '%".$_POST['pesq'] ."%'";
+                    $query = "SELECT * FROM professor WHERE nome LIKE '%". mysqli_real_escape_string($db, $_POST['pesq']) ."%'";
                 }else{
                     $query = "SELECT * FROM professor";
                 }
