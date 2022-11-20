@@ -21,3 +21,23 @@ pass varchar(25) not null,
 valor double(9,2) not null,
 foto varchar(150) null
 );
+
+create table simulado(
+id int unsigned auto_increment not null,
+nome varchar(50) not null,
+descricao varchar(250) not null,
+primary key(id)
+);
+
+create table quest_sim(
+id int unsigned auto_increment not null,
+sim_id int unsigned not null,
+pergunta varchar(250) not null,
+opt1 varchar(150),
+opt2 varchar(150),
+opt3 varchar(150),
+opt4 varchar(150),
+opt5 varchar(150),
+primary key(id),
+foreign key(sim_id) references simulado(id)
+);
