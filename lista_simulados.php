@@ -15,21 +15,18 @@ If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['u
     <script src="scripts/global.js" defer></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Detalhes do professor</title>
+    <title>Lista de Simulados</title>
 </head>
 <body>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
-            <div class="card text-white bg-dark">
+            <div class="card text-white bg-dark mb-3">
                 <div class="card-header">
-                    <h3>Pesquisa de professores
+                    <h3>Simulados
                         <a href="home.php" class="btn btn-danger float-end">VOLTAR</a>
-                    </h3><br>
-                    <form method="POST" action="pesquisar.php">
-                        <input type="text" name="pesq" placeholder="Nome">
-                        <input type="submit" value="Pesquisar">
-                    </form>
+                    </h3>
                 </div>
             </div>
             <br>
@@ -37,22 +34,17 @@ If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['u
                 <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Formação</th>
-                    <th>E-mail</th>
-                    <th>Valor</th>
+                    <th>Descrição</th>
+                    <th>Questões</th>
+                    <th>Professor</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
                 include "sql/ConBD.php";
 
-                if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pesq']) && !empty($_POST['pesq'])){
-                    $query = "SELECT * FROM professor WHERE nome LIKE '%". mysqli_real_escape_string($db, $_POST['pesq']) ."%'";
-                }else{
-                    $query = "SELECT * FROM professor";
-                }
-
-                $query_run = mysqli_query($db, $query);
+                $query_run = mysqli_query($db, "SELECT simulado.id AS ID, simulado.nome AS Nome, simulado.descricao AS Des, count(quest_sim.opt1) AS NQ, professor.nome AS Prof FROM simulado LEFT JOIN professor ON simulado.cod_prof_fk = professor.cod_professor LEFT JOIN quest_sim ON quest_sim.sim_id = simulado.id GROUP BY quest_sim.sim_id");
 
                 if(mysqli_num_rows($query_run) > 0)
                 {
@@ -61,21 +53,18 @@ If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['u
                     {
                         ?>
                         <tr>
-                            <td><?=
-                                $card['nome']; ?></td>
-                            <td><?=
-                                $card['formac']; ?></td>
-                            <td><?=
-                                $card['email']; ?></td>
-                            <td>R$ <?=
-                                $card['valor']; ?></td>
+                            <td><?= $card['Nome']; ?></td>
+                            <td><?= $card['Des']; ?></td>
+                            <td><?= $card['NQ']; ?></td>
+                            <td><?= $card['Prof']; ?></td>
+                            <td><a href="simulado.php?id=<?= $card['ID']; ?>" class="btn btn-info">Iniciar</a></td>
                         </tr>
                         <?php
                     }
                 }
                 else
                 {
-                    echo "<h5 style='color: #b7b7b7'> Nenhum professor cadastrado </h5>";
+                    echo "<h5 style='color: #b7b7b7'> Nenhum simulado cadastrado </h5>";
                 }
                 ?>
                 </tbody>

@@ -1,17 +1,9 @@
-.card{
-    backdrop-filter: blur(12px);
-    background-color: rgba(0,0,0,0.5) !important;
-    color: #e0e0e0 !important;
+.table-dark{
+    border-radius: 7px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
 }
 
-table{
-    color: #e0e0e0 !important;
-    backdrop-filter: blur(12px);
-    background-color: rgba(0,0,0,0.5) !important;
+table tr td, table tr th{
+    background-color: rgba(0, 0, 0, 0.53) !important;
 }
-
-td{
-    color: #b7b7b7 !important;
-}
-
-

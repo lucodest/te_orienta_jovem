@@ -37,16 +37,21 @@ if($result->num_rows == 1){
         ?>
         <div>
             <h2><?=$row['pergunta']?></h2>
-            <label for="<?=$counter?>r1"><?=$row['opt1']?></label>
+
             <input type="radio" id="<?=$counter?>r1" name="res<?=$counter?>" value="1">
-            <label for="<?=$counter?>r2"><?=$row['opt2']?></label>
+            <label for="<?=$counter?>r1"><?=$row['opt1']?></label><br>
+
             <input type="radio" id="<?=$counter?>r2" name="res<?=$counter?>" value="2">
-            <label for="<?=$counter?>r3"><?=$row['opt3']?></label>
+            <label for="<?=$counter?>r2"><?=$row['opt2']?></label><br>
+
             <input type="radio" id="<?=$counter?>r3" name="res<?=$counter?>" value="3">
-            <label for="<?=$counter?>r4"><?=$row['opt4']?></label>
+            <label for="<?=$counter?>r3"><?=$row['opt3']?></label><br>
+
             <input type="radio" id="<?=$counter?>r4" name="res<?=$counter?>" value="4">
-            <label for="<?=$counter?>r5"><?=$row['opt5']?></label>
+            <label for="<?=$counter?>r4"><?=$row['opt4']?></label><br>
+
             <input type="radio" id="<?=$counter?>r5" name="res<?=$counter?>" value="5">
+            <label for="<?=$counter?>r5"><?=$row['opt5']?></label><br>
         </div>
         <?php
         $counter++;

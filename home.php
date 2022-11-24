@@ -53,7 +53,7 @@ if(isset($_GET['logoff'])){
 			<img src="img/suporte.png">
 			<h2>Teste vocacional</h2>
 		</div>
-		<div class="col" onclick="window.location.pathname = 'te_orienta_jovem/simulado.php'">
+		<div class="col" onclick="window.location.pathname = 'te_orienta_jovem/lista_simulados.php'">
 			<img src="img/simulados.png">
 			<h2>Simulados</h2>
 		</div>
