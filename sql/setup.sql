@@ -24,8 +24,10 @@ foto varchar(150) null
 
 create table simulado(
 id int unsigned auto_increment not null,
+cod_prof_fk int unsigned not null,
 nome varchar(50) not null,
 descricao varchar(250) not null,
+foreign key(cod_prof_fk) references professor(cod_professor),
 primary key(id)
 );
 
