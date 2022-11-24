@@ -1,13 +1,13 @@
 <?php
 session_start();
 If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['uname'])){
-    header('Location: index.html');
+    header('Location: About/');
     die();
 }
 if(isset($_GET['logoff'])){
     session_unset();
     session_destroy();
-    header('Location: index.html');
+    header('Location: About/');
     die();
 }
 ?>
@@ -53,7 +53,7 @@ if(isset($_GET['logoff'])){
 			<img src="img/suporte.png">
 			<h2>Teste vocacional</h2>
 		</div>
-		<div class="col">
+		<div class="col" onclick="window.location.pathname = 'te_orienta_jovem/simulado.php'">
 			<img src="img/simulados.png">
 			<h2>Simulados</h2>
 		</div>

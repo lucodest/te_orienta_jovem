@@ -3,11 +3,7 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['tipo'])) {
-        $db = mysqli_connect("localhost", "root", "");
-        if (!$db) {
-            die('<h2>Erro no servidor!</h2>');
-        }
-        mysqli_select_db($db, "te_orienta_joven");
+        include "sql/ConBD.php";
 
         if (empty($_POST['user']) || empty($_POST['pass']) || empty($_POST['tipo'])) {
             mysqli_close($db);

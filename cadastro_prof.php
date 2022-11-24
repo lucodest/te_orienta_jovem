@@ -10,10 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (isset($_POST['user']) && isset($_POST['cpf']) && isset($_POST['formac']) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['pass']) && isset($_POST['val'])) {
-        $db = mysqli_connect("localhost", "root", "");
-        if (!$db) {
-            die('<h2>Erro no servidor!</h2>');
-        }
+        include "sql/ConBD.php";
 
         if (empty($_POST['user']) || empty($_POST['cpf']) || empty($_POST['formac']) || empty($_POST['email']) || empty($_POST['tel']) || empty($_POST['pass']) || empty($_POST['val'])) {
             mysqli_close($db);

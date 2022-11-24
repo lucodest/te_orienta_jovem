@@ -11,10 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['tel']) && isset($_POST['email'])) {
-        $db = mysqli_connect("localhost", "root", "");
-        if (!$db) {
-            die('<h2>Erro no servidor!</h2>');
-        }
+        include "sql/ConBD.php";
 
         if (empty($_POST['user']) || empty($_POST['pass']) || empty($_POST['tel']) || empty($_POST['email'])) {
             mysqli_close($db);

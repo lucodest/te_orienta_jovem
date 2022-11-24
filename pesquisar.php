@@ -1,7 +1,7 @@
 <?php
 session_start();
 If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['uname'])){
-    header('Location: index.html');
+    header('Location: About/');
     die();
 }
 ?>
@@ -46,10 +46,7 @@ If(!isset($_SESSION['uid']) || !isset($_SESSION['utype']) || !isset($_SESSION['u
                 </thead>
                 <tbody>
                 <?php
-                $db = mysqli_connect("localhost", "root", "", "te_orienta_joven");
-                if (!$db) {
-                    die('<h2>Erro no servidor!</h2>');
-                }
+                include "sql/ConBD.php";
 
                 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pesq']) && !empty($_POST['pesq'])){
                     $query = "SELECT * FROM professor WHERE nome LIKE '%". mysqli_real_escape_string($db, $_POST['pesq']) ."%'";
