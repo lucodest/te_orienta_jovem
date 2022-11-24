@@ -1,0 +1,211 @@
+element.style {
+    margin: 0px;
+    font-size: 16px;
+    color: rgb(44, 51, 69);
+    font-family: Inter, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+}
+
+
+
+body{
+    font-family: 'Numans', sans-serif;
+    box-sizing: border-box;
+    background: #18bd5b;
+
+}
+
+element.style {margin: 0px;
+    font-size: 16px;
+    color: rgb(44, 51, 69);
+    font-family: Inter, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+}
+
+.form-all ul {
+    min-height: 64px;
+}
+
+.JotFormBuilder .form-line[data-type=control_radio] .question-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-line.isNotSelected * {
+    cursor: default;
+}
+
+.form-line {
+    cursor: move;
+    transition-duration: .15s;
+    transition-property: margin-bottom;
+    transition-timing-function: ease-in-out;
+}
+
+.form-line {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.form-line, ul.page-section {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.form-line {
+    padding: 12px 10px;
+    margin: 12px 4px;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    transition: background-color .15s;
+}
+
+li, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.form-line[data-type=control_radio] .form-single-column {
+    width: 100%;
+}
+
+.form-line.isNotSelected * {
+    cursor: default;
+}
+
+.form-single-column {
+    width: 100%;
+    display: inline-block;
+}
+
+.form-line[data-type=control_checkbox] .form-single-column, .form-line[data-type=control_radio] .form-single-column {
+    width: 100%;
+}
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+.form-all ul {
+    min-height: 64px;
+}
+
+ul.page-section {
+    margin: 0;
+    padding: 0 38px;
+    list-style: none;
+}
+
+.form-line, ul.page-section {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.form-section {
+    margin: 12px 4px;
+}
+
+li, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.formFooter-button, .submit-button {
+    background-color: #18bd5b;
+    border-color: #18bd5b;
+    color: rgb(255, 0, 0);
+}
+
+.JotFormBuilder #stage [contenteditable] {
+    cursor: text;
+    outline: none!important;
+}
+
+.jf-form-buttons:not(.form-pagebreak-back) {
+    margin-left: 10px;
+}
+
+.jf-form-buttons {
+    border-color: #c3cad8;
+}
+
+#reset {
+    width: auto;
+    min-width: 180px;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+}
+
+#reset:hover {
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+  }
+
+.submit-button {
+    width: auto;
+    min-width: 180px;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #00fff2;
+    color: rgb(255, 255, 255);
+  }
+
+.jf-form-buttons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 3em;
+    width: auto;
+    min-width: 128px;
+    color: #2c3345;
+    font-size: 1em;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button {
+    outline: 0;
+}
+
+.form-line[data-type=control_checkbox] .form-single-column, .form-line[data-type=control_radio] .form-single-column {
+    width: 100%;
+}
+
+.form-line.isNotSelected * {
+    cursor: default;
+}
+
+.form-multiple-column, .form-single-column {
+    width: 100%;
+    display: inline-block;
+}

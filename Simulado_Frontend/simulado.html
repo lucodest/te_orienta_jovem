@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+
+       <title>Simulado</title>
+      
+    
+<script>
+    (function(globalConfigurations) {
+      // "EnterpriseConfigs" object only must be available on Enterprise servers
+      var configurationMappings = [
+          {configName: 'FormConfigs'},
+          {configName: 'UserConfigs'},
+      ];
+      try {
+        configurationMappings = [
+          { configName: 'FormConfigs', configValue: globalConfigurations.form },
+          { configName: 'UserConfigs', configValue: globalConfigurations.user },
+        ];
+                } catch (e) {
+                          }
+      for (var i = 0; i < configurationMappings.length; i++) {
+        var configName = configurationMappings[i].configName;
+        var configValue = configurationMappings[i].configValue && typeof configurationMappings[i].configValue === 'object' ? configurationMappings[i].configValue : {};
+        Object.defineProperty(window, configName, { value: Object.freeze(configValue) });
+      }
+    })({"form":{"isHIPAA":false,"isEU":false},"user":{"isHIPAA":false,"isEU":false,"isCCPA":false}});
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js" defer></script>
+
+    <script src="scripts/global.js" defer></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/estilo_simulado.css">
+
+</head>
+    <body background="img/background.png">
+
+        <script defer="" src="https://cdn01.jotfor.ms/s/vendor/static/react/17.0.2/react.production.min.js"></script>
+        <script defer="" src="https://cdn02.jotfor.ms/s/vendor/static/react-dom/17.0.2/react-dom.production.min.js"></script>
+        <script defer="" src="https://cdn03.jotfor.ms/s/vendor/static/moment/2.29.1/moment-with-locales.min.js"></script>
+        <script defer="" src="https://cdn01.jotfor.ms/s/vendor/static/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+        <script defer="" src="https://cdn02.jotfor.ms/s/vendor/static/pdfjs-dist/2.12.313/pdf.min.js"></script>
+        <script defer="" src="https://cdn03.jotfor.ms/s/vendor/static/pdfjs-dist/2.12.313/pdf_viewer.js"></script>
+        <script defer="" src="https://cdn01.jotfor.ms/s/form-builder/0bf80c7424f/static/js/runtime-index.a73fbdc2.js"></script>
+        <script defer="" src="https://cdn02.jotfor.ms/s/form-builder/0bf80c7424f/static/js/24.6469c97e.js"></script>
+
+        <div class="formPage-container ">
+            <div class="form-cover-wrapper">
+                <div class="form-cover-break " style="max-width: 752px;">
+                    
+                </div>
+            </div>
+            <div class="formPage-each">
+                <div class="formPage-stuff" data-pagenumber-id="1" style="width: 100%; max-width: 752px; display: none;">
+
+                </div>
+                <div class="formPage-stage form-all  " data-page-id="1" data-page-qid="34" style="max-width: 752px;">
+                    <ul class="clearfix form-section page-section page_1" style="margin: 0px; font-size: 16px; color: rgb(44, 51, 69); font-family: Arial, Helvetica, sans-serif;">
+                    <li id="id_1" data-type="control_head" data-qid="1" data-order="1" data-selectioncount="0" class="form-line clearfix isSelected form-input-wide form-input-wide-line-fix lineAlignment-Left" style="z-index: 2;">
+                        <div id="app_wizards" class="selectedControls ">
+                            <div class="line selectedControlsLine">
+                                
+                            </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+                        <div class="question-wrapper questionWrapper  false">
+                            <div class="form-input-wide" data-layout="full" style="position: relative;">
+                                <div class="form-header-group  header-large">
+                                    <div class="header-text httal htvam">
+                                        <h1 id="header_1" class="form-header" data-component="header">
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <div class="inlineEditor" format="text" data-gramm="false">Simulado (Prova Matematica)</div>
+                                            </div>
+                                        </h1>
+                                        <div id="subHeader_1" class="form-subHeader">
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <div class="inlineEditor"  format="text"  data-gramm="false">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dragHandle">
+                            <div class="dragHandle-point">
+
+                            </div>
+                            <div class="dragHandle-point">
+
+                            </div>
+                            <div class="dragHandle-point">
+
+                            </div>
+                            <div class="dragHandle-point">
+
+                            </div>
+                        </div>
+                        <div id="app_wizards" class="moodular collabUsers-userList">
+
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+                    
+                    <li id="id_9" data-type="control_radio" data-qid="9" data-order="5" data-selectioncount="0" class="form-line clearfix isNotSelected lineAlignment-Auto-Top" style="z-index: 1;">
+                        <div class="question-wrapper questionWrapper  false">
+                            <label id="label_9" class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
+                                <div class="editor-container editorHasText" style="display: inline; width: 100%;">
+                                    <div class="inlineEditor" format="text"  data-gramm="false" style="width: 100%;">1. Calcule o volume do cilindro e marque a alternativa que mais se aproxima do resultado. Dado: considere π = 3,14.</div>
+                                </div>
+                            </label>
+                            <div class="form-input-wide" data-layout="full" style="position: relative;">
+                                <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                                    <span class="form-radio-item" style="clear: left;">
+                                        <span class="dragger-item">
+
+                                        </span>
+                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_0" name="q9_4How" value="Under 18">
+                                        <span>
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <label class="inlineEditor" format="text" data-gramm="false" id="label_input_9_0" style="display: inline-block;">a) Volume = 6000 cm³.</label>
+                                            </div>
+                                        </span>
+                                    </span>
+                                    <span class="form-radio-item" style="clear: left;">
+                                        <span class="dragger-item">
+
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_1" name="q9_4How" value="18 - 25">
+                                        <span>
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <label class="inlineEditor"  format="text" data-gramm="false" id="label_input_9_1" style="display: inline-block;">b) Volume = 5000 cm³.</label>
+                                            </div>
+                                        </span><br><br>
+                                    </span>
+                                    <span class="form-radio-item" style="clear: left;">
+                                        <span class="dragger-item">
+
+                                        </span>
+                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                        <span>
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_2" style="display: inline-block;">c) Volume = 4000 cm³.</label>
+                                            </div>
+                                        </span><br><br>
+                                    </span>
+                                    <span class="form-radio-item" style="clear: left;">
+                                        <span class="dragger-item">
+
+                                        </span>
+                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                        <span>
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">d) Volume = 3000 cm³.</label>
+                                            </div>
+                                        </span><br><br>
+                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                        <span>
+                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_2" style="display: inline-block;">e) Volume = 2000 cm³.</label>
+                                            </div>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <li id="id_9" data-type="control_radio" data-qid="9" data-order="5" data-selectioncount="0" class="form-line clearfix isNotSelected lineAlignment-Auto-Top" style="z-index: 1;">
+                            <div class="question-wrapper questionWrapper  false">
+                                <label id="label_9" class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
+                                    <div class="editor-container editorHasText" style="display: inline; width: 100%;">
+                                        <div class="inlineEditor"  format="text"  data-gramm="false" style="width: 100%;">2. No lava jato Limpeza Total, houve um grande movimento hoje, tendo recebido 23 clientes para lavagem completa. No entanto, ao começar a lavar o próximo carro, a água acabou. Só então os funcionários se deram conta que a empresa fornecedora de água emitiu um alerta dizendo que devido a reparos e obras de manutenção, neste dia, não haveria abastecimento.
+
+                                            O dono do estabelecimento pediu um abastecimento de urgência com um caminhão pipa e a empresa fornecedora de água perguntou a capacidade do reservatório. Como era bem antigo, as indicações de capacidade havia apagado, sendo necessário fazer o cálculo a partir de suas medidas.
+                                            
+                                            O reservatório é um cilindro de 4 m de altura e diâmetro de 1,80 m.
+                                            
+                                            A empresa fornecedora de água possui cinco opções de entrega em caminhões pipa. Marque a opção que poderá ser solicitada pelo proprietário do lava jato, enchendo o máximo possível seu reservatório.
+                                            
+                                            Dados: 1 m³ = 1 000 l</div>
+                                    </div>
+                                </label>
+                                <div class="form-input-wide" data-layout="full" style="position: relative;">
+                                    <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                                        <span class="form-radio-item" style="clear: left;">
+                                            <span class="dragger-item">
+    
+                                            </span>
+                                            <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_0" name="q9_4How" value="Under 18">
+                                            <span>
+                                                <div class="editor-container editorHasText" style="display: inline-block;">
+                                                    <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_0" style="display: inline-block;">a) 12 000 l.</label>
+                                                </div>
+                                            </span><br><br>
+                                        </span>
+                                        <span class="form-radio-item" style="clear: left;">
+                                            <span class="dragger-item">
+    
+                                            </span>
+                                            <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_1" name="q9_4How" value="18 - 25">
+                                            <span>
+                                                <div class="editor-container editorHasText" style="display: inline-block;">
+                                                    <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_1" style="display: inline-block;">b) 11 000 l.</label>
+                                                </div>
+                                            </span><br><br>
+                                        </span>
+                                        <span class="form-radio-item" style="clear: left;">
+                                            <span class="dragger-item">
+    
+                                            </span>
+                                            <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                            <span>
+                                                <div class="editor-container editorHasText" style="display: inline-block;">
+                                                    <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_2" style="display: inline-block;">c) 10 000 l.</label>
+                                                </div>
+                                            </span><br><br>
+                                        </span>
+                                        <span class="form-radio-item" style="clear: left;">
+                                            <span class="dragger-item">
+    
+                                            </span>
+                                            <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                            <span>
+                                                <div class="editor-container editorHasText" style="display: inline-block;">
+                                                    <label class="inlineEditor"format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">d) 9 000 l.</label>
+                                                </div>
+                                            </span>
+                                        </span><br><br>
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                <span>
+                                    <div class="editor-container editorHasText" style="display: inline-block;">
+                                        <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_2" style="display: inline-block;">e) 8 000 l.</label>
+                                    </div>
+                                </span><br><br>
+                            </span>
+                            <span class="form-radio-item" style="clear: left;">
+                                <span class="dragger-item">
+
+                                </span>
+                                            
+                                </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <li id="id_9" data-type="control_radio" data-qid="9" data-order="5" data-selectioncount="0" class="form-line clearfix isNotSelected lineAlignment-Auto-Top" style="z-index: 1;">
+                                <div class="question-wrapper questionWrapper  false">
+                                    <label id="label_9" class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
+                                        <div class="editor-container editorHasText" style="display: inline; width: 100%;">
+                                            <div class="inlineEditor"  format="text"  data-gramm="false" style="width: 100%;">3. Qual a área lateral de um cilindro reto que possui 502,4 cm³ de volume e diâmetro 8 cm.
+
+                                                Dado: π = 3,14.</div>
+                                        </div>
+                                    </label>
+                                    <div class="form-input-wide" data-layout="full" style="position: relative;">
+                                        <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                                            <span class="form-radio-item" style="clear: left;">
+                                                <span class="dragger-item">
+        
+                                                </span>
+                                                <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_0" name="q9_4How" value="Under 18">
+                                                <span>
+                                                    <div class="editor-container editorHasText" style="display: inline-block;">
+                                                        <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_0" style="display: inline-block;">a) 355,10 cm²</label>
+                                                    </div>
+                                                </span><br><br>
+                                            </span>
+                                        
+                            
+                                            <span class="form-radio-item" style="clear: left;">
+                                                <span class="dragger-item">
+        
+                                                </span>
+                                                <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_1" name="q9_4How" value="18 - 25">
+                                                <span>
+                                                    <div class="editor-container editorHasText" style="display: inline-block;">
+                                                        <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_1" style="display: inline-block;">b) 251,20 cm²</label>
+                                                    </div>
+                                                </span><br><br>
+                                            </span>
+                                            <span class="form-radio-item" style="clear: left;">
+                                                <span class="dragger-item">
+        
+                                                </span>
+                                                <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                                <span>
+                                                    <div class="editor-container editorHasText" style="display: inline-block;">
+                                                        <label class="inlineEditor" format="text" data-gramm="false" id="label_input_9_2" style="display: inline-block;">c) 125,51 cm²</label>
+                                                    </div>
+                                                </span><br><br>
+                                            </span>
+                                            <span class="form-radio-item" style="clear: left;">
+                                                <span class="dragger-item">
+        
+                                                </span>
+
+                                                <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                                <span>
+                                                    <div class="editor-container editorHasText" style="display: inline-block;">
+                                                        <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">d) 375,30 cm²</label>
+                                                    </div>
+                                                </span><br><br>
+                                            </span>
+                                                    <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">e) 91,45 cm²</label>
+                                                        </div>
+                                                </span>
+                                                </span>
+                                            </span>
+                                            
+                                            
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <li id="id_9" data-type="control_radio" data-qid="9" data-order="5" data-selectioncount="0" class="form-line clearfix isNotSelected lineAlignment-Auto-Top" style="z-index: 1;">
+                                    <div class="question-wrapper questionWrapper  false">
+                                        <label id="label_9" class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
+                                            <div class="editor-container editorHasText" style="display: inline; width: 100%;">
+                                                <div class="inlineEditor"  format="text"  data-gramm="false" style="width: 100%;">4. Um silo que armazena grãos de soja em uma fazenda, apresentou um problema em sua estrutura e precisa ser reparado com uma solda na parede. O silo é uma torre na forma de um cilindro de 10 m de altura e diâmetro de 6 m. Para realizar o serviço, o gerente decidiu esvaziar o silo, armazenando a produção temporariamente em caçambas de carretas na forma de paralelepípedos, com as medidas iguais a 12 m de comprimento, 2 m largura e 1,5 m de altura. Quantas caçambas são necessárias para armazenar todo o conteúdo?
+
+                                                    Utilize π = 3,14.</div>
+                                            </div>
+                                        </label>
+                                        <div class="form-input-wide" data-layout="full" style="position: relative;">
+                                            <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                                                <span class="form-radio-item" style="clear: left;">
+                                                    <span class="dragger-item">
+            
+                                                    </span>
+                                                    <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_0" name="q9_4How" value="Under 18">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor"  format="text"  data-gramm="false" id="label_input_9_0" style="display: inline-block;">a) 15 caçambas</label><br>
+                                                        </div>
+                                                    </span><br><br>
+                                                </span>
+                                                <span class="form-radio-item" style="clear: left;">
+                                                    <span class="dragger-item">
+            
+                                                    </span>
+                                                    <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_1" name="q9_4How" value="18 - 25">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_1" style="display: inline-block;">b) 7 caçambas</label><br>
+                                                        </div>
+                                                    </span><br><br>
+                                                </span>
+                                                <span class="form-radio-item" style="clear: left;">
+                                                    <span class="dragger-item">
+            
+                                                    </span>
+                                                    <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor" format="text" data-gramm="false" id="label_input_9_2" style="display: inline-block;">c) 16 caçambas</label><br>
+                                                        </div>
+                                                    </span><br><br>
+                                                </span>
+                                                <span class="form-radio-item" style="clear: left;">
+                                                    <span class="dragger-item">
+            
+                                                    </span>
+                                                    
+                                                    <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">d) 9 caçambas</label><br>
+                                                        </div>
+                                                    </span><br><br>
+                                                </span>
+                                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">e) 8 caçambas</label><br>
+                                                        </div>
+                                                    </span><br><br>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <li id="id_9" data-type="control_radio" data-qid="9" data-order="5" data-selectioncount="0" class="form-line clearfix isNotSelected lineAlignment-Auto-Top" style="z-index: 1;">
+                                        <div class="question-wrapper questionWrapper  false">
+                                            <label id="label_9" class="form-label form-label-top form-label-auto" for="none" style="width: 100%;">
+                                                <div class="editor-container editorHasText" style="display: inline; width: 100%;">
+                                                    <div class="inlineEditor" format="text"  data-gramm="false" style="width: 100%;">5. (Enem 2010). Dona Maria, diarista na casa da família Teixeira, precisa fazer café para servir as vinte pessoas que se encontram numa reunião na sala. Para fazer o café, Dona Maria dispõe de uma leiteira cilíndrica e copinhos plásticos, também cilíndricos.
+
+                                                        Com o objetivo de não desperdiçar café, a diarista deseja colocar a quantidade mínima de água na leiteira para encher os vinte copinhos pela metade. Para que isso ocorra, Dona Maria deverá:</div><br>
+                                                </div>
+                                            </label>
+                                            <div class="form-input-wide" data-layout="full" style="position: relative;">
+                                                <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                                                    <span class="form-radio-item" style="clear: left;">
+                                                        <span class="dragger-item">
+                
+                                                        </span>
+                                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_0" name="q9_4How" value="Under 18">
+                                                        <span>
+                                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                                <label class="inlineEditor" format="text" data-gramm="false" id="label_input_9_0" style="display: inline-block;">a) encher a leiteira até a metade, pois ela tem um volume 20 vezes maior que o volume do copo.</label><br>
+                                                            </div>
+                                                        </span><br><br>
+                                                    </span>
+                                                    <span class="form-radio-item" style="clear: left;">
+                                                        <span class="dragger-item">
+                
+                                                        </span>
+                                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_1" name="q9_4How" value="18 - 25">
+                                                        <span>
+                                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                                <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_1" style="display: inline-block;">b) encher a leiteira toda de água, pois ela tem um volume 20 vezes maior que o volume do copo.</label><br>
+                                                            </div>
+                                                        </span><br><br>
+                                                    </span>
+                                                    <span class="form-radio-item" style="clear: left;">
+                                                        <span class="dragger-item">
+                
+                                                        </span>
+                                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_2" name="q9_4How" value="25 - 45">
+                                                        <span>
+                                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                                <label class="inlineEditor" format="text" data-gramm="false" id="label_input_9_2" style="display: inline-block;">c) encher a leiteira toda de água, pois ela tem um volume 10 vezes maior que o volume do copo.</label><br>
+                                                            </div>
+                                                        </span>
+                                                    </span>
+                                                    <span class="form-radio-item" style="clear: left;">
+                                                        <span class="dragger-item">
+                
+                                                        </span><br><br>
+                                                        <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                                        <span>
+                                                            <div class="editor-container editorHasText" style="display: inline-block;">
+                                                                <label class="inlineEditor" format="text" data-gramm="false" id="label_input_9_3" style="display: inline-block;">d) encher duas leiteiras de água, pois ela tem um volume 10 vezes maior que o volume do copo.</label><br>
+                                                            </div>
+                                                        </span><br><br>
+
+                                                            <input aria-describedby="label_9" type="radio" tabindex="-1" class="form-radio" id="input_9_3" name="q9_4How" value="45 or more">
+                                                    <span>
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <label class="inlineEditor" format="text"  data-gramm="false" id="label_input_9_3" style="display: inline-block;">e) encher cinco leiteiras de água, pois ela tem um volume 10 vezes maior que o volume do copo.</label><br>
+                                                        </div><br><br>
+
+                                                      
+                                                        <div class="editor-container editorHasText" style="display: inline-block;">
+                                                            <button class="form-submit-button submit-button jf-form-buttons jsTest-submitField" placeholder="" format="text"  data-gramm="false" id="input_34" type="submit" data-component="button" data-content="">Enviar</button>
+                                                        </div>
+
+                                                        <input type="reset" id="reset" value="Reset">
+
+
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                        
+         </span>
+    </body>
+</html>
