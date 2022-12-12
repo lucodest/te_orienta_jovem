@@ -1,0 +1,9 @@
+.table-dark{
+    border-radius: 7px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+table tr td, table tr th{
+    background-color: rgba(0, 0, 0, 0.53) !important;
+}

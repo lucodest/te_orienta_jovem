@@ -1,0 +1,62 @@
+.col{
+    margin: 30px;
+    padding: 10px;
+    aspect-ratio: 1;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+    color: #e0e0e0;
+}
+
+#userbox{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top:1vh;
+    left: 1vh;
+    font-size: 2vh;
+}
+
+#userbox a{
+    text-decoration: none;
+    margin-left: 10px;
+    color: #f81c4c;
+}
+
+#logo{
+    width: 12vw;
+    position: absolute;
+    left: 2vw;
+    top: 4vh;
+}
+
+.col:hover{
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(10px);
+    width: 60vw;
+}
+
+h1{
+    font-size: 6vw;
+}
+
+h2{
+    font-size: 30px;
+    color: #e0e0e0;
+}
+
+
+body{
+    color: #e0e0e0;
+    user-select: none;
+}
+
+div img{
+    height: 180px;
+}
